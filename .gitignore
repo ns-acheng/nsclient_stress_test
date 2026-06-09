@@ -1,0 +1,6 @@
+*.pyc
+__pycache__/
+.claude/
+log/*
+*.log.pytest_cache
+hosts-bk

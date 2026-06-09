@@ -30,4 +30,4 @@ jobs:
         run: python -m pip install -r requirement.txt
 
       - name: Run unit tests
-        run: python -m pytest test/ -v -m "not (windows or android or ios)"
+        run: python -m pytest test/ -v -m "unit and not windows and not android and not ios"

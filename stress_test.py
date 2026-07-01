@@ -410,15 +410,46 @@ class StressTest:
             return
         logger.info(f"Current status: {status}")
         if status != "RUNNING":
-            self.service.start_service(self.service_name)
-            logger.info(f"Waiting for {STD_SEC} seconds")
+            started = self.service.start_service(self.service_name)
+            if not started:
+                logger.error(
+                    f"Service '{self.service_name}' failed to reach RUNNING "
+                    "state. Stopping test."
+                )
+                self.stop_event.set()
+                return
+
+            logger.info(f"Post-start settle wait for {STD_SEC} seconds")
             if smart_sleep(STD_SEC, self.stop_event): return
+
+            post_status = self.service.get_service_status(self.service_name)
+            logger.info(f"Current status (Post-Start): {post_status}")
+            if post_status != "RUNNING":
+                logger.error(
+                    f"Service '{self.service_name}' is not RUNNING after "
+                    f"settle wait. Status: {post_status}"
+                )
+                self.stop_event.set()
+                return
 
             if self.config.client_disabling_enabled:
                 logger.info("Service Started. Ensuring Client Enabled.")
                 self.diag.enable_client_tracing(True, self.cfg_mgr.is_64bit)
 
-        self.system.log_process_usage(self.service_process_name, self.log_dir)
+        logger.info(
+            f"Collecting resource usage for {self.service_process_name}."
+        )
+        usage_logged = self.system.log_process_usage(
+            self.service_process_name,
+            self.log_dir,
+        )
+        if usage_logged:
+            logger.info("Resource usage snapshot collected.")
+        else:
+            logger.warning(
+                f"Resource usage skipped; process '{self.service_process_name}' "
+                "was not found."
+            )
 
     def exec_stop_service(self):
         status = self.service.get_service_status(self.service_name)
@@ -951,7 +982,9 @@ class StressTest:
                 if self.stop_event.is_set(): break
 
                 if not self.cfg_mgr.is_local_cfg:
+                    logger.info("Syncing client config via nsdiag...")
                     self.diag.sync_client_config(self.cfg_mgr.is_64bit)
+                    logger.info("Client config sync finished.")
                 else:
                     logger.info("Local config active, skip nsdiag update")
 

@@ -8,6 +8,9 @@ from platforms.windows.diag import WindowsDiagnostics # For live dump
 
 logger = logging.getLogger()
 
+SERVICE_START_TIMEOUT_SEC = 90
+SERVICE_STATUS_POLL_SEC = 1
+
 class WindowsServiceManager(IServiceManager):
     def get_service_status(self, service_name: str) -> str:
         try:
@@ -31,11 +34,69 @@ class WindowsServiceManager(IServiceManager):
     def start_service(self, service_name: str) -> bool:
         try:
             logger.info(f"Starting service '{service_name}'...")
-            subprocess.run(["sc", "start", service_name], check=True)
-            return True
+            result = subprocess.run(
+                ["sc", "start", service_name],
+                check=True,
+                capture_output=True,
+                text=True,
+                encoding='utf-8',
+                errors='replace',
+                timeout=30,
+            )
+            if result.stdout.strip():
+                logger.info(result.stdout.strip())
+            if result.stderr.strip():
+                logger.warning(result.stderr.strip())
+            return self._wait_for_target_status(
+                service_name,
+                "RUNNING",
+                SERVICE_START_TIMEOUT_SEC,
+            )
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to start {service_name}: {e}")
             return False
+        except subprocess.TimeoutExpired:
+            logger.error(
+                f"Timeout while issuing start command for {service_name}."
+            )
+            return False
+
+    def _wait_for_target_status(
+        self,
+        service_name: str,
+        target_status: str,
+        timeout: int,
+    ) -> bool:
+        start_time = time.monotonic()
+        last_status = None
+        last_progress_log = -1
+
+        while time.monotonic() - start_time < timeout:
+            elapsed = int(time.monotonic() - start_time)
+            status = self.get_service_status(service_name)
+            if status == target_status:
+                logger.info(
+                    f"Service '{service_name}' reached {target_status} "
+                    f"after {elapsed}s."
+                )
+                return True
+
+            if status != last_status or elapsed // 10 > last_progress_log:
+                logger.info(
+                    f"Service '{service_name}' status after start: {status} "
+                    f"({elapsed}s elapsed)"
+                )
+                last_status = status
+                last_progress_log = elapsed // 10
+
+            time.sleep(SERVICE_STATUS_POLL_SEC)
+
+        final_status = self.get_service_status(service_name)
+        logger.error(
+            f"Timeout waiting for service '{service_name}' to reach "
+            f"{target_status}. Final status: {final_status}"
+        )
+        return False
 
     def stop_service(self, service_name: str, timeout: int = 30) -> bool:
         try:

@@ -9,6 +9,8 @@ from interfaces.i_diag import IDiagnostics
 
 logger = logging.getLogger()
 
+NSDIAG_TIMEOUT_SEC = 300
+
 class WindowsDiagnostics(IDiagnostics):
     def __init__(self):
         self.nsdiag_path = r"C:\Program Files\Netskope\STAgent\nsdiag.exe"
@@ -59,9 +61,27 @@ class WindowsDiagnostics(IDiagnostics):
             return False
         command = [nsdiag_path] + args
         try:
-            subprocess.run(command, check=True, capture_output=True, text=True)
+            logger.info(f"Running nsdiag {desc}: {' '.join(command)}")
+            result = subprocess.run(
+                command,
+                check=True,
+                capture_output=True,
+                text=True,
+                encoding='utf-8',
+                errors='replace',
+                timeout=NSDIAG_TIMEOUT_SEC,
+            )
+            if result.stdout.strip():
+                logger.info(result.stdout.strip())
+            if result.stderr.strip():
+                logger.warning(result.stderr.strip())
             logger.info(f"nsdiag {desc} executed successfully.")
             return True
+        except subprocess.TimeoutExpired:
+            logger.error(
+                f"nsdiag {desc} timed out after {NSDIAG_TIMEOUT_SEC}s."
+            )
+            return False
         except subprocess.CalledProcessError as e:
             logger.error(f"nsdiag {desc} failed. RC: {e.returncode}")
             return False

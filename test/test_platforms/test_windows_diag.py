@@ -64,3 +64,32 @@ class TestWindowsDiagnostics:
             "log collection",
         )
         mock_collect_event_logs.assert_called_once_with("20260413_120000", "C:/logs")
+
+    @patch("platforms.windows.diag.os.path.exists")
+    @patch("platforms.windows.diag.subprocess.run")
+    def test_run_nsdiag_uses_timeout(self, mock_run, mock_exists):
+        from platforms.windows.diag import NSDIAG_TIMEOUT_SEC, WindowsDiagnostics
+
+        mock_exists.return_value = True
+        mock_run.return_value = MagicMock(returncode=0, stdout="ok", stderr="")
+
+        diag = WindowsDiagnostics()
+        ok = diag._run_nsdiag(diag.nsdiag_path, ["-u"], "config update")
+
+        assert ok is True
+        mock_run.assert_called_once()
+        assert mock_run.call_args.kwargs["timeout"] == NSDIAG_TIMEOUT_SEC
+
+    @patch("platforms.windows.diag.os.path.exists")
+    @patch("platforms.windows.diag.subprocess.run")
+    def test_run_nsdiag_timeout_returns_false(self, mock_run, mock_exists):
+        from platforms.windows.diag import WindowsDiagnostics
+        from subprocess import TimeoutExpired
+
+        mock_exists.return_value = True
+        mock_run.side_effect = TimeoutExpired(["nsdiag.exe", "-u"], 300)
+
+        diag = WindowsDiagnostics()
+        ok = diag._run_nsdiag(diag.nsdiag_path, ["-u"], "config update")
+
+        assert ok is False

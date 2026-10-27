@@ -30,7 +30,23 @@ BLOCKED_KEYWORDS = [
     "extremist", "radical", "violence", "gore", "blood", "death", "suicide",
     "kill", "murder", "torture", "abuse", "rape", "assault", "crime",
     "illegal", "warez", "crack", "hack", "cheat", "torrent", "magnet",
-    "pirate", "proxy", "vpn", "anonymizer", "tor", "darkweb", "onion"
+    "pirate", "proxy", "vpn", "anonymizer", "tor", "darkweb", "onion",
+    # crypto mining pools / miners / mining-industry brands (security team
+    # finding 2026-10-27: 30 such sites were in url.txt). Specific names only -
+    # generic "pool"/"miner" would false-positive liverpool, whirlpool,
+    # studypool, filezilla, rapidminer, etc.
+    "2miners", "f2pool", "ethermine", "ethpool", "nanopool", "sparkpool",
+    "antpool", "poolin", "viabtc", "viaabtc", "nicehash", "minergate",
+    "miningpoolhub", "mining-dutch", "hashvault", "monerohash", "supportxmr",
+    "xmrpool", "minexmr", "moneroocean", "webminepool", "coinhive",
+    "authedmine", "cryptoloot", "coinimp", "jsecoin", "mineralt",
+    "cryptonight", "xmr", "monero", "c3pool", "cloverpool", "braiins",
+    "slushpool", "dwarfpool", "flypool", "rplant", "sigmapool", "trustpool",
+    "kifpool", "luckypool", "vmcpool", "rupool", "ahashpool", "zpool",
+    "blazepool", "ravenminer", "herominers", "k1pool", "woolypooly",
+    "ezil.me", "flexpool", "hiveon", "xmrig", "rigelminer", "whatsminer",
+    "bitmain", "compassmining", "gomining", "getmonero", "mempool.space",
+    "rocketpool", "newsbtc"
 ]
 
 def is_safe_keyword(domain: str) -> bool:

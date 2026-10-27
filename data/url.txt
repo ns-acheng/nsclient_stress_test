@@ -11,7 +11,6 @@ http://360safe.com
 http://4dcloud.fr
 http://4in.co.kr
 http://4wps.net
-http://8next.com
 http://aau.edu.jo/ar
 http://abcvg.info
 http://abeesi.fr
@@ -942,7 +941,6 @@ https://1cupis.ru
 https://1cv8update.com
 https://1exch.net
 https://1fichier.com
-https://1fxt.com
 https://1games.io
 https://1gb.ru
 https://1geki.jp
@@ -2175,7 +2173,6 @@ https://apply.china-admissions.com
 https://appmeasurements.com
 https://appmedia.jp
 https://appmonsta.ai
-https://appnext.com
 https://appocean.media
 https://appodeal.com
 https://appplay.org
@@ -2469,7 +2466,6 @@ https://atid.me
 https://atlantabg.org
 https://atlantablackstar.com
 https://atlantico.fr
-https://atlantiscasino.com
 https://atlaq.com
 https://atlasoficeandfireblog.wordpress.com
 https://atlaspay.online
@@ -2932,7 +2928,6 @@ https://beamng.com/game
 https://bearbulltraders.com
 https://bearsfanteamshop.com
 https://bearsmart.org/work/beekeepers
-https://beastsofpoker.com
 https://bebesong.com
 https://beboo.ru
 https://beckett.com
@@ -3004,8 +2999,6 @@ https://bestsdwan.com
 https://bestssp.com
 https://besttoolbars.net
 https://besturogyn.com/providers
-https://bet-pari.in
-https://bet.hkjc.com
 https://bet303.world
 https://beta.f1-gears.com/smf/index.php
 https://beta.flylady.net
@@ -3551,7 +3544,6 @@ https://br.clear.sale
 https://br.com
 https://bradescoseguros.com.br
 https://bragg.group
-https://braiins.com
 https://brain.com.ua/ukr
 https://brain.ieee.org
 https://brainfart346.wordpress.com
@@ -3723,7 +3715,6 @@ https://buildops.com
 https://buildroot.org
 https://buildstaging.com/en
 https://buildzoom.com
-https://builtbybit.com
 https://builtin.com
 https://builtwith.com
 https://bukkit.org
@@ -3974,7 +3965,6 @@ https://casewarecloud.com
 https://caseys.com
 https://cash.app
 https://cashwalklabs.io
-https://casino.hardrock.com/atlantic-city
 https://casper.com
 https://cassandralavalle.com
 https://cast.ai/kubernetes-cost-optimization
@@ -4843,7 +4833,6 @@ https://cooldaddypop.com
 https://coolhunting.com
 https://coolors.co
 https://coolseasonfoodlegume.org
-https://cooltext.com
 https://coolwoodwildlifepark.com/what-are-marsupials-the-ultimate-guide
 https://coop-sateto.jp/recipe
 https://coop.ch
@@ -5079,7 +5068,6 @@ https://cryptonews.com
 https://cryptopanic.com
 https://cryptopotato.com
 https://cryptopro.ru
-https://cryptoquant.com
 https://cryptoslate.com
 https://cryptozombies.io
 https://cryptozoologynews.com
@@ -5177,7 +5165,6 @@ https://custom.sockclub.com
 https://customer.io
 https://customer.io/features/in-app-messages
 https://cute-cursors.com
-https://cutt.ly
 https://cutterssports.com
 https://cuyana.com
 https://cvbankas.lt
@@ -5211,7 +5198,6 @@ https://cyberpolygon.com
 https://cyberprotect.ru
 https://cyberscoop.com
 https://cybersecurity.att.com
-https://cybersecurity.opentext.com/legacy/zix
 https://cybersecurityventures.com
 https://cyberwurx.com
 https://cybo.com
@@ -5344,7 +5330,6 @@ https://datatechonert.com
 https://datatracker.ietf.org
 https://datausa.io
 https://dathost.net
-https://datingfactory.com
 https://dauntbooks.co.uk
 https://davematthewsband.com
 https://davematthewsband.com/warehouse
@@ -5458,7 +5443,6 @@ https://delta.bg
 https://deltadentalins.com
 https://deltaww.com
 https://deltiasgaming.com
-https://deluge-torrent.org
 https://demarinisdogtraining.com/dog-training-methods-and-beliefs-what-are-the-differences
 https://dementia.ie
 https://dementia.org.sg
@@ -6127,7 +6111,6 @@ https://eab.com
 https://eachnight.com/sleep
 https://eadaily.com/ru
 https://eage.org
-https://eaglenxt.com
 https://eaps.mit.edu
 https://earlham.edu
 https://earlybird.club
@@ -7613,7 +7596,6 @@ https://fullswinggolf.com
 https://fumo-spo.ru
 https://fun.xyz
 https://funbridge.com
-https://fundednext.com
 https://fundora.ru
 https://fundraiseup.com
 https://funeral-notices.co.uk
@@ -8082,7 +8064,6 @@ https://globallink.com
 https://globalliver.org
 https://globalnews.ca
 https://globalpeace.org
-https://globalpoker.com/geo-block
 https://globalpost.com
 https://globalprivacycontrol.org
 https://globalreporting.org
@@ -8185,7 +8166,6 @@ https://goldenartistcolors.com/products/golden-artist-acrylics
 https://goldenfrog.com
 https://goldenglobes.com
 https://goldenlivingguide.com
-https://goldennugget.com
 https://goldenresult.in
 https://goldfishslot.net
 https://goldprice.org
@@ -10998,7 +10978,6 @@ https://linkr.bio
 https://linksquares.com
 https://linkssp.ru
 https://linksyssmartwifi.com
-https://linktr.ee
 https://linkvertise.com
 https://linode.com
 https://linustechtips.com
@@ -11055,7 +11034,6 @@ https://littleworldtv.com
 https://liu.se
 https://live-tennis.eu
 https://live.deutsche-boerse.com
-https://live.euronext.com/en/products/indices/list
 https://live.mts.ru/moscow
 https://live.vodafone.de
 https://live24.gr
@@ -12291,7 +12269,6 @@ https://monocle.com
 https://monocul.us
 https://monoskop.org/Monoskop
 https://monsterenergy.com
-https://montecarlosbm.com
 https://montgomerycountymd.gov
 https://monthlyreview.org
 https://montiapm.com
@@ -13287,7 +13264,6 @@ https://nutrition.org
 https://nutritionfacts.org
 https://nutritionintl.org
 https://nutritionsource.hsph.harvard.edu
-https://nuxt.com
 https://nv.gov
 https://nv.ua
 https://nvd.nist.gov
@@ -13320,7 +13296,6 @@ https://nzb.su
 https://nzbfinder.ws/login
 https://nzbgeek.info
 https://nzic.org.nz/unsecure_files/book/6D.pdf
-https://nzxt.com
 https://o-sport.de
 https://o.canada.com
 https://o18.link
@@ -14527,8 +14502,6 @@ https://pokemondb.net
 https://pokemongo.com
 https://pokemonshowdown.com
 https://pokepara.jp
-https://pokercoaching.com
-https://pokerdb.thehendonmob.com
 https://poki-gdn.com
 https://poki.com
 https://poki.com/en/obby
@@ -15340,7 +15313,6 @@ https://redboxads.com
 https://redbus1.org
 https://redcanary.com
 https://redcanary.com/resources-center/category/blog
-https://redchippoker.com
 https://redcircle.com
 https://redcom.ru
 https://redcrescent.org
@@ -15606,7 +15578,6 @@ https://ring.ir
 https://ringmagazine.com/en
 https://ringpublishing.com
 https://ringsdb.com
-https://riojawine.com/es
 https://riorise.com
 https://riovagas.com.br
 https://rip.ie
@@ -15868,7 +15839,6 @@ https://runsignup.com
 https://runway.com
 https://runwaylanderspot.com
 https://runwayml.com
-https://rupiahlottery.com
 https://rupress.org
 https://ruralking.com
 https://rusal.ru/en
@@ -15968,7 +15938,6 @@ https://samhsa.gov
 https://samokat.ru
 https://samolet.ru
 https://samoletplus.ru/msk-mo
-https://samouraiwallet.com
 https://samplefocus.com
 https://samplicio.us
 https://samsung-news.com
@@ -16037,7 +16006,6 @@ https://sass-lang.com
 https://sat.gob.mx
 https://satellogic.com
 https://satta-king-black.com
-https://satta-king-fast.com
 https://satta-king-up.com
 https://satta-xpress.com
 https://sattacademy.com
@@ -16588,8 +16556,6 @@ https://shortienow.com
 https://shortpixel.com
 https://shortsforgoals.com
 https://shortswave.com
-https://shorturl.at
-https://shorturl.fm
 https://shotblogs.com
 https://shotcut.org
 https://shotdeck.com
@@ -16767,9 +16733,7 @@ https://sixflags.com
 https://sixsenses.com
 https://siyau.com
 https://sizzling-hot-deluxe-777.com
-https://sizzling-hot-deluxe-slot.com
 https://sizzling-hot-play.com
-https://sizzlinghot-slot.com
 https://sizzlinghotslot.online
 https://sj.qq.com
 https://sjsu.edu
@@ -17066,7 +17030,6 @@ https://somneesleep.com
 https://somon.in
 https://somon.tj
 https://somplo.com
-https://somuchpoker.com
 https://sonarr.tv
 https://sonataplatform.com
 https://sonatrach.com/en
@@ -17074,7 +17037,6 @@ https://sonetel.com/de
 https://songkick.com
 https://songmeanings.com
 https://sonobi.com
-https://sonomawine.com
 https://sonoraninstitute.org
 https://sonorarally.com
 https://sony-cinematography.com
@@ -17224,7 +17186,6 @@ https://sportal.bg
 https://sportfilm800.com
 https://sportmail.ru
 https://sportnieuws.nl
-https://sportpesa.co.tz/sw/nyumbani-betting/soka-1
 https://sportpesa.com
 https://sportradar.com
 https://sportradar.com/teams-leagues-federations/synergy-coaching-scouting
@@ -17539,7 +17500,6 @@ https://stretchoid.com
 https://striezelmarkt.dresden.de/de
 https://strike.me
 https://strikeout.im
-https://stripchat.com
 https://stripe.com/climate
 https://stripe.com/guides
 https://stripe.com/resources/more/saas-pricing-models-101
@@ -17662,7 +17622,6 @@ https://superjob.ru
 https://superkassa.net
 https://superkassa.ru
 https://superlogica.net/clients
-https://supernext.com
 https://superops.com
 https://superrare.com
 https://superserver.co.id
@@ -17797,7 +17756,6 @@ https://sztaki.hun-ren.hu
 https://t-dx.com
 https://t-j.ru
 https://t-mobile.com
-https://t.ly
 https://t.pia.jp
 https://t1-cloud.ru
 https://t1.ru
@@ -18509,7 +18467,6 @@ https://timex.com
 https://timmehosting.de
 https://timus.online
 https://tinder.com
-https://tinderflirt.com
 https://tineye.com
 https://tinggly.com
 https://tinhouse.com
@@ -18517,7 +18474,6 @@ https://tinhte.vn
 https://tink.com
 https://tinkerlab.com
 https://tino.vn
-https://tiny.cc
 https://tiny.com.br
 https://tinybeans.com
 https://tinyblogging.com
@@ -18525,7 +18481,6 @@ https://tinybuddha.com
 https://tinypic.com/tinypic-blog
 https://tinypng.com
 https://tinyspeck.com
-https://tinyurl.com
 https://tinywow.com
 https://tioanime.com
 https://tioj.ck.tp.edu.tw
@@ -18724,7 +18679,6 @@ https://tpserv.ru
 https://tpu.ru
 https://tpwd.texas.gov
 https://tqc-conference.org/2026
-https://tr.ee
 https://trace-cmd.org
 https://trackcmp.net
 https://trackcourier.io
@@ -18784,7 +18738,6 @@ https://translated.com/welcome
 https://translatewiki.net
 https://translifeline.org
 https://transloadit.com
-https://transmissionbt.com
 https://transmitsecurity.com
 https://transneft.ru
 https://transom.org
@@ -18928,7 +18881,6 @@ https://trustarc.com
 https://trustburn.com
 https://trustedstack.com
 https://trustindex.io
-https://trustwallet.com
 https://trustx.org
 https://truth-table.com
 https://truthout.org
@@ -19414,7 +19366,6 @@ https://up.nic.in
 https://up33693.com
 https://up99plus.com
 https://upbhulekh.gov.in
-https://upbit.com
 https://upc.edu.pe
 https://upcloud.com
 https://upd.edu.ph
@@ -19438,7 +19389,6 @@ https://upscore.com
 https://upsell.com
 https://upstox.com
 https://upsun.com
-https://upswingpoker.com
 https://uptake.com
 https://uptimerobot.com
 https://upwork.com
@@ -19463,7 +19413,6 @@ https://url.cn/sorry?from=
 https://url.tw
 https://urlebird.com
 https://urlscan.io
-https://urlz.fr
 https://us.checkout.gymshark.com
 https://us.dollarshaveclub.com
 https://us.ecoflow.com
@@ -19576,7 +19525,6 @@ https://utraff.com
 https://utro.ru
 https://utsrus.com
 https://utsystem.edu
-https://utua.com.br
 https://utulsa.edu
 https://uubb.website
 https://uuidksinc.net
@@ -20050,7 +19998,6 @@ https://wakwak.com
 https://walkerart.org
 https://walkjapan.com
 https://wallbox.com
-https://walletconnect.com
 https://wallethub.com
 https://wallex.ir
 https://wallhaven.cc
@@ -20255,7 +20202,6 @@ https://websummit.com
 https://websupport.se
 https://websupport.se/en
 https://websurg.com/en
-https://webtorrent.io
 https://webuntis.com
 https://weburbanist.com
 https://weburg.net
@@ -20356,7 +20302,6 @@ https://whereby.com
 https://whering.co.uk
 https://whimsical.com
 https://whirlpool.net.au
-https://whitebit.com
 https://whiteboard.cloud.microsoft
 https://whiteboxdigital.ru
 https://whitefoxboutique.com
@@ -20405,7 +20350,6 @@ https://wiki.inx.net.za
 https://wiki.kernel.org
 https://wiki.seesaa.jp
 https://wiki.wireshark.org
-https://wikifeet.com
 https://wikileaks.org
 https://wikimapia.org
 https://wikimediafoundation.org
@@ -20452,7 +20396,6 @@ https://windowsreport.com
 https://windscribe.com
 https://windsurf.com
 https://windytrail24.online
-https://wine-economics.org
 https://wineanorak.com
 https://winecurmudgeon.com
 https://winefolly.com
@@ -20564,7 +20507,6 @@ https://workspace.google.com/products/meet
 https://workspace.google.com/products/meet/?src=duo-redirect
 https://workspaceupdates.googleblog.com/2023/04/new-community-features-for-google-chat-and-an-update-currents%20.html
 https://workupjob.com
-https://workupload.com
 https://workwelltech.com
 https://world-heart-federation.org
 https://world-nuclear-news.org
@@ -20897,8 +20839,6 @@ https://www.808fubo11.com
 https://www.813.fr
 https://www.84000.co
 https://www.888.com
-https://www.888poker.com
-https://www.888sport.com
 https://www.8a.nu
 https://www.8theme.com
 https://www.90daykorean.com
@@ -21452,7 +21392,6 @@ https://www.airbridge.io
 https://www.airbus.com/en
 https://www.airbus.com/en/products-services/space
 https://www.aircanada.com/home/tw/zh/aco/flights
-https://www.aircrack-ng.org
 https://www.airdo.jp
 https://www.airdroid.com
 https://www.aire.com
@@ -22284,7 +22223,6 @@ https://www.as20055.net
 https://www.as8758.net
 https://www.asa.org.uk
 https://www.asahi.com
-https://www.asahibeer.co.jp/enjoy/recipe/index.psp.html
 https://www.asahimatsu.co.jp/recipe
 https://www.asahq.org
 https://www.asaninst.org
@@ -22529,7 +22467,6 @@ https://www.australianwildlife.org
 https://www.austria.info/en-gb
 https://www.austria.info/en-gb/inspiration/recipes
 https://www.austrian.com
-https://www.austrianwine.com
 https://www.auswaertiges-amt.de
 https://www.aut.ac.nz
 https://www.auth.gr
@@ -23388,13 +23325,11 @@ https://www.bitcoinmagazinepro.com
 https://www.bitdefender.com/zh-tw
 https://www.bitdegree.org
 https://www.bitfinex.com
-https://www.bitget.com
 https://www.bitgetapp.com
 https://www.bitgetapps.com
 https://www.bitheads.com
 https://www.bitkom.org
 https://www.bitkub.com
-https://www.bitmart.com
 https://www.bitmex.com
 https://www.bitmex.com/research
 https://www.bitmoji.com
@@ -23442,8 +23377,6 @@ https://www.blackdoginstitute.org.au
 https://www.blackdrago.com
 https://www.blackenterprise.com
 https://www.blackfire.io
-https://www.blackjackapprenticeship.com
-https://www.blackjackinfo.com
 https://www.blackline.com
 https://www.blackmagicdesign.com
 https://www.blackmagicdesign.com/products/davinciresolve
@@ -23587,7 +23520,6 @@ https://www.bmz.de/de
 https://www.bnbchain.org/en
 https://www.bncollege.com
 https://www.bndes.gov.br/wps/portal/site/home
-https://www.bnext.com.tw
 https://www.bnf.fr/fr
 https://www.bnl.gov/world
 https://www.bnm.gov.my
@@ -23744,7 +23676,6 @@ https://www.bottegaveneta.com/en-tw
 https://www.bouchercon.com
 https://www.boulevardmagazine.org
 https://www.bouqs.com
-https://www.bourgogne-wines.com
 https://www.bournemouth.ac.uk
 https://www.bournemouthecho.co.uk
 https://www.boursier.com
@@ -24161,7 +24092,6 @@ https://www.bvifsc.vg
 https://www.bvl.com.pe
 https://www.bw-networx.net
 https://www.bwin.com/en/sports
-https://www.bybit.com
 https://www.bybitglobal.com
 https://www.bycs.de/index.html
 https://www.byd.com/jp
@@ -24394,7 +24324,6 @@ https://www.cardiff.ac.uk/welsh-language-governance
 https://www.cardkingdom.com
 https://www.cardmarket.com
 https://www.cardplayer.com
-https://www.cardplayer.com/poker-tools/poker-taxes
 https://www.care.org
 https://www.care.org/our-work/food-and-nutrition
 https://www.care.org/our-work/health
@@ -24483,10 +24412,6 @@ https://www.casetify.com
 https://www.cashbackeasy.com
 https://www.cashfree.com
 https://www.cashify.in
-https://www.casinist.com
-https://www.casino.org
-https://www.casino.org/vitalvegas
-https://www.casino.us/cardschat
 https://www.casio.com/tw
 https://www.cassegrain.com/recettes
 https://www.cassgb.org
@@ -25413,7 +25338,6 @@ https://www.coinigy.com
 https://www.coinparticle.com
 https://www.coinpayu.com
 https://www.coinspeaker.com
-https://www.coinspot.com.au
 https://www.cointracker.io
 https://www.colaboraread.com.br
 https://www.colamanga.com
@@ -25674,7 +25598,6 @@ https://www.coolmathgames.com
 https://www.coolmathgames.com/0-run
 https://www.coolmore.com
 https://www.coolstuffinc.com
-https://www.coomeet.com
 https://www.coop.co.uk
 https://www.coop.co.uk/recipes
 https://www.coop.co.uk/recipes/christmas
@@ -25970,8 +25893,6 @@ https://www.cryptohopper.com
 https://www.cryptometer.io
 https://www.cryptonext-security.com/en
 https://www.cryptopolitan.com
-https://www.cryptoquant.com
-https://www.cryptotaxaudit.com
 https://www.crystalinks.com/timetravel.html
 https://www.cs-cart.com
 https://www.cs.umd.edu/~jkatz
@@ -26530,7 +26451,6 @@ https://www.depression.org.tw
 https://www.deputy.com
 https://www.deraktionaer.de
 https://www.derbytelegraph.co.uk
-https://www.deribit.com
 https://www.dermstore.com
 https://www.dermstore.com/c/hair-care
 https://www.derslig.com
@@ -27296,7 +27216,6 @@ https://www.easy-orders.net
 https://www.easyapplianceparts.com
 https://www.easycounter.com
 https://www.easyfie.com
-https://www.easyflirt.com/fr_FR
 https://www.easyfundraising.org.uk
 https://www.easyhost.be/nl
 https://www.easyliveauction.com
@@ -27615,7 +27534,6 @@ https://www.elliptic.co
 https://www.elliptic.co/blog
 https://www.ellopos.net
 https://www.ellyschlein.it
-https://www.elmaz.com/dating
 https://www.elmira.es
 https://www.elmostrador.cl
 https://www.elmueble.com
@@ -28056,8 +27974,6 @@ https://www.euroncap.com/en
 https://www.euronetworldwide.com
 https://www.euronews.com
 https://www.euronews.com/my-europe
-https://www.euronext.com/en
-https://www.euronext.com/nb/markets/oslo
 https://www.euronics.it
 https://www.europanostra.org
 https://www.europapark.de/de
@@ -28855,12 +28771,6 @@ https://www.food.gov.uk
 https://www.foodallergy.org
 https://www.foodandlandusecoalition.org
 https://www.foodandwaterwatch.org
-https://www.foodandwine.com
-https://www.foodandwine.com/cocktails-spirits
-https://www.foodandwine.com/holidays-events
-https://www.foodandwine.com/holidays-events/christmas
-https://www.foodandwine.com/lifestyle/gifts
-https://www.foodandwine.com/travel/europe/french-main-courses
 https://www.foodarts.com
 https://www.foodbusinessnews.net/articles/16669-trends-driving-sugar-reduction-in-confectionery
 https://www.foodbusinessnews.net/topics/187-snack-trends
@@ -29233,7 +29143,6 @@ https://www.futbin.com
 https://www.futbol24.com
 https://www.futbolemotion.com
 https://www.futbolfantasy.com
-https://www.futnext.com
 https://www.futunn.com
 https://www.futura-sciences.com
 https://www.future-s.com
@@ -29344,7 +29253,6 @@ https://www.gamestar.de
 https://www.gamestop.com
 https://www.gamestop.com/collectibles
 https://www.gametracker.com
-https://www.gametwist.com/en
 https://www.gamian.eu
 https://www.gaming.nv.gov
 https://www.gamingbible.com
@@ -29518,7 +29426,6 @@ https://www.geniussports.com/scoreboard-data
 https://www.genocid.lt/muziejus
 https://www.genome.gov
 https://www.gensler.com
-https://www.genspark.ai
 https://www.genting.com
 https://www.gentlemansgazette.com
 https://www.gentoo.org
@@ -29889,7 +29796,6 @@ https://www.goldbelly.com
 https://www.goldderby.com
 https://www.goldenelixir.com
 https://www.goldengoose.com/it/it
-https://www.goldennugget.com
 https://www.goldmansachs.com
 https://www.goldmansachs.com/insights
 https://www.goldmedalsquared.com
@@ -31490,7 +31396,6 @@ https://www.idealo.es
 https://www.idealo.fr
 https://www.idealo.it
 https://www.idealsvdr.com
-https://www.idealwine.com/fr
 https://www.idefix.com
 https://www.identitagolose.it
 https://www.identitytheft.gov
@@ -33843,7 +33748,6 @@ https://www.liputan6.com
 https://www.liqpay.ua/uk
 https://www.liqui-moly.com/en
 https://www.liquity.org
-https://www.liquor.com
 https://www.lisaeldridge.com
 https://www.lisbon-treaty.org
 https://www.lispolis.pt
@@ -34603,7 +34507,6 @@ https://www.matillion.com
 https://www.matrimonio.com
 https://www.matrix42.com/en/fastviewer
 https://www.matrixcare.com
-https://www.matrixport.com
 https://www.matsue-castle.jp
 https://www.matsumoto-castle.jp
 https://www.matsuru.com
@@ -34940,7 +34843,6 @@ https://www.metafilter.com
 https://www.metahub.space
 https://www.metallica.com
 https://www.metanet.ch/de
-https://www.metasploit.com
 https://www.metasrc.com
 https://www.metastock.com
 https://www.metatft.com
@@ -35410,8 +35312,6 @@ https://www.montagnes-magazine.com
 https://www.montana.edu
 https://www.montbell.jp
 https://www.montclair.edu
-https://www.montecarlosbm.com
-https://www.montecarlosbm.com/en/casino-monaco
 https://www.montereybayaquarium.org
 https://www.montevideo.com.uy
 https://www.montgomeryadvertiser.com
@@ -35731,7 +35631,6 @@ https://www.myfinance.com
 https://www.myfitnesspal.com
 https://www.myflorida.gov
 https://www.myfonts.com
-https://www.myfreecams.com
 https://www.myfritz.net/devices
 https://www.myfxbook.com
 https://www.mygov.in
@@ -37165,7 +37064,6 @@ https://www.nzherald.co.nz
 https://www.nzpcn.org.nz
 https://www.nzpost.co.nz
 https://www.nzsee.org.nz
-https://www.nzwine.com/en
 https://www.nzx.com
 https://www.nzz.ch
 https://www.o2.co.uk
@@ -37522,9 +37420,6 @@ https://www.openstreetmap.org
 https://www.opensubtitles.com
 https://www.opensubtitles.org/en/search
 https://www.opensuse.org
-https://www.opentext.com
-https://www.opentext.com/?o=mf
-https://www.opentext.com/about/brands/microfocus
 https://www.opentix.life
 https://www.openvswitch.org
 https://www.openwall.com
@@ -37945,7 +37840,6 @@ https://www.partselect.com
 https://www.partslink24.com/partslink24/index.jsp
 https://www.partycity.com
 https://www.partycity.com/christmas
-https://www.partypoker.com/en/poker
 https://www.paruvendu.fr
 https://www.pasa.org
 https://www.pasconet.co.jp/recipes
@@ -38589,17 +38483,6 @@ https://www.pokemon.co.jp
 https://www.pokemon.com
 https://www.pokemon.com/us/pokemon-tcg
 https://www.pokemoncenter.com
-https://www.poker.org
-https://www.pokeratlas.com
-https://www.pokercode.com
-https://www.pokergo.com
-https://www.pokerlistings.com
-https://www.pokernews.com
-https://www.pokernow.club
-https://www.pokerstars.com
-https://www.pokerstrategy.com
-https://www.pokertracker.com
-https://www.pokertraining.com
 https://www.poland.travel/en
 https://www.polar.com/blog
 https://www.polar.com/welcome
@@ -38885,7 +38768,6 @@ https://www.pro-e.org
 https://www.pro-football-reference.com
 https://www.pro9.co.uk/html
 https://www.proasyl.de
-https://www.probit.com/en-us
 https://www.procaresoftware.com
 https://www.procergs.rs.gov.br/inicial
 https://www.proceso.com.mx
@@ -39145,7 +39027,6 @@ https://www.qantas.com/au/en/about-us/our-company/subsidiary-companies.html#jump
 https://www.qantas.com/en-au
 https://www.qantas.com/en-tw
 https://www.qatarenergy.qa/en/Pages/vHome.aspx
-https://www.qbittorrent.org
 https://www.qbwiki.com/wiki/Main_Page
 https://www.qcall-itn.eu
 https://www.qcc.com
@@ -39343,7 +39224,6 @@ https://www.rainviewer.com
 https://www.raiplay.it
 https://www.raisound.com
 https://www.rajah.com
-https://www.rakeback.com/poker-strategy/taxes-and-poker
 https://www.rakuten-card.co.jp
 https://www.rakuten-sec.co.jp
 https://www.rakuten.ca
@@ -39525,7 +39405,6 @@ https://www.rebellerally.com
 https://www.rebelmouse.com
 https://www.rebelscum.com
 https://www.rebelsport.com.au
-https://www.rebrandly.com
 https://www.rebuyengine.com
 https://www.recastsoftware.com
 https://www.receitanet.net
@@ -39744,7 +39623,6 @@ https://www.repaircafe.org
 https://www.repairclinic.com
 https://www.repairmywindowsanddoors.co.uk
 https://www.replacements.com
-https://www.replaypoker.com
 https://www.replicahq.com
 https://www.replicastudios.com
 https://www.replo.app
@@ -41336,7 +41214,6 @@ https://www.six-group.com/en/home.html
 https://www.six-group.com/en/products-services/the-swiss-stock-exchange.html
 https://www.sixnationsrugby.com/en
 https://www.sixpence.ai
-https://www.sixt.com
 https://www.sixteenthcentury.org
 https://www.sixthfinch.com
 https://www.sixthtone.com
@@ -41464,7 +41341,6 @@ https://www.sloperama.com
 https://www.slothconservation.org
 https://www.slotomania.com
 https://www.slotozilla.com
-https://www.slovenia.info/en/things-to-do/food-and-wine
 https://www.slovenia.info/sl
 https://www.slow-manga.com
 https://www.slowfood.com
@@ -42125,7 +42001,6 @@ https://www.start.gg
 https://www.startech.com.bd
 https://www.startlap.hu
 https://www.startmail.com
-https://www.startnext.com
 https://www.startpage.com
 https://www.startpagina.nl
 https://www.startquestion.com
@@ -42333,7 +42208,6 @@ https://www.suaramerdeka.com
 https://www.subaru.com
 https://www.subaru.com/motorsports
 https://www.subito.it
-https://www.sublimetext.com
 https://www.submittable.com
 https://www.subscan.io
 https://www.subscribestar.com
@@ -42378,7 +42252,6 @@ https://www.sunlife.com/en
 https://www.sunlighten.com
 https://www.sunmedia.tv
 https://www.sunmi.com
-https://www.sunnxt.com
 https://www.sunnyportal.com/Templates/Start.aspx
 https://www.sunrise.ch/de/home
 https://www.sunriseclick.com
@@ -42743,7 +42616,6 @@ https://www.tasteofhome.com
 https://www.tastingpoland.com
 https://www.tastingtable.com
 https://www.tastingtable.com/693678/birthday-dinners-suck-please-stop
-https://www.tastingtable.com/695426/tesse-restaurant-bill-chait-wine
 https://www.tat-adz.com
 https://www.tatacommunications.com
 https://www.tataelxsi.com
@@ -42815,7 +42687,6 @@ https://www.teachingmoney.co.uk
 https://www.teachoo.com
 https://www.teachtci.com
 https://www.teads.com
-https://www.teakandtwine.com
 https://www.team-cymru.com
 https://www.teamapp.com/?_detail=v1
 https://www.teamblind.com
@@ -43033,7 +42904,6 @@ https://www.texaschildrens.org
 https://www.texasmonthly.com
 https://www.texasroadhouse.com
 https://www.texastribune.org
-https://www.text.com
 https://www.textkit.com
 https://www.textnow.com
 https://www.textron.com
@@ -43181,7 +43051,6 @@ https://www.theharrispoll.co.uk
 https://www.thehartford.com
 https://www.thehealthsite.com
 https://www.thehealthy.com
-https://www.thehendonmob.com
 https://www.thehenryford.org
 https://www.thehersheycompany.com/en_us/home.html
 https://www.thehindu.com
@@ -43227,7 +43096,6 @@ https://www.thelocal.de
 https://www.thelocal.fr
 https://www.thelocal.se
 https://www.theloopywhisk.com
-https://www.thelott.com
 https://www.thelotter.com
 https://www.them.us
 https://www.themanual.com
@@ -43305,12 +43173,7 @@ https://www.thespruce.com/feng-shui-4127926
 https://www.thesprucecrafts.com
 https://www.thesprucecrafts.com/christmas-crafts-4162853
 https://www.thespruceeats.com
-https://www.thespruceeats.com/beer-4162694
-https://www.thespruceeats.com/beer-styles-4162692
 https://www.thespruceeats.com/brandy-recipes-4162699
-https://www.thespruceeats.com/red-wines-4162688
-https://www.thespruceeats.com/wine-4162690
-https://www.thespruceeats.com/wine-basics-4162689
 https://www.thesprucepets.com
 https://www.thestaffcanteen.com
 https://www.thestage.co.uk
@@ -43624,7 +43487,6 @@ https://www.tomtom.com
 https://www.ton.com.br
 https://www.tonyawards.com
 https://www.tonyrobbins.com
-https://www.toobit.com
 https://www.toogoodtogo.com
 https://www.toolnut.com
 https://www.toolsforhumanity.com
@@ -44401,7 +44263,6 @@ https://www.unesco.org/en/intangible-cultural-heritage
 https://www.unesco.org/en/mab
 https://www.unf.edu
 https://www.unfpa.org
-https://www.unfuckyourhabitat.com
 https://www.unh.edu
 https://www.unhcr.org
 https://www.unhcr.org/europe
@@ -44775,7 +44636,6 @@ https://www.utm.my
 https://www.utmb.edu
 https://www.utoledo.edu
 https://www.utoronto.ca
-https://www.utorrent.com
 https://www.utrgv.edu
 https://www.uts.edu.au
 https://www.utsa.edu
@@ -45947,8 +45807,6 @@ https://www.windriver.com
 https://www.windstream.com
 https://www.windstream.net
 https://www.windy.com
-https://www.wine-searcher.com
-https://www.wine.com
 https://www.wineaustralia.com
 https://www.winebusiness.com
 https://www.wineenthusiast.com
@@ -46390,7 +46248,6 @@ https://www.xr.global
 https://www.xrea.com
 https://www.xs4all.nl
 https://www.xserver.ne.jp
-https://www.xt.com/en
 https://www.xtb.com/int
 https://www.xterraplanet.com
 https://www.xtool.com
@@ -46420,7 +46277,6 @@ https://www.yakushiji.or.jp
 https://www.yale.edu
 https://www.yalemedicine.org
 https://www.yalla.live
-https://www.yalla1shoot.com/home_7
 https://www.yallaludo.com
 https://www.yallashoot.us
 https://www.yam.com
@@ -46472,7 +46328,6 @@ https://www.yesstyle.com/zh_TW/home.html
 https://www.yesware.com
 https://www.yeti.com
 https://www.yettel.hu
-https://www.yext.com
 https://www.yha.com.au
 https://www.yha.org.uk
 https://www.yicai.com
@@ -46864,7 +46719,6 @@ https://www.zype.com
 https://www.zyte.com
 https://www1.ac-grenoble.fr
 https://www1.ac-lille.fr
-https://www1.ebun.tv/porno
 https://www1.flightrising.com
 https://www1.pluska.sk
 https://www1.pucsp.br

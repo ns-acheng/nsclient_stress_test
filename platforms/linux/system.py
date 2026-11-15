@@ -11,7 +11,7 @@ class LinuxSystemInfo(ISystemInfo):
     """Linux system information implementation."""
 
     def get_process_pid(self, process_name: str) -> int:
-        """Get PID of a process by name."""
+        """Get PID of a process by name using psutil."""
         for proc in psutil.process_iter(['name', 'pid']):
             try:
                 if proc.info['name'] == process_name:
@@ -36,34 +36,50 @@ class LinuxSystemInfo(ISystemInfo):
         return 0
 
     def log_process_usage(self, process_name: str, log_dir: str) -> bool:
-        """Log process CPU and memory usage."""
-        pid = self._get_pid(process_name)
-        if not pid:
-            return False
-
+        """Log process CPU and memory usage using ps command."""
         try:
-            # Use ps command to get CPU and memory info
-            cmd = ["ps", "-p", str(pid), "-o", "%cpu,rss"]
-            res = subprocess.run(cmd, capture_output=True, text=True)
-            lines = res.stdout.strip().splitlines()
+            # Use ps -C to get CPU usage sum for all instances of the process
+            result = subprocess.run(
+                ["ps", "-C", process_name, "-o", "%cpu,rss", "--no-headers"],
+                capture_output=True,
+                text=True,
+                timeout=5
+            )
 
-            if len(lines) > 1:
-                vals = lines[1].strip().split()
-                if len(vals) >= 2:
-                    cpu = float(vals[0])
-                    rss_kb = int(vals[1])
-                    rss_mb = rss_kb / 1024
+            if result.returncode != 0 or not result.stdout.strip():
+                return False
 
-                    if not os.path.exists(log_dir):
-                        os.makedirs(log_dir)
-                    full_path = os.path.join(log_dir, f"{process_name}_resources.log")
-                    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            # Parse ps output and sum CPU values (for multiple instances)
+            lines = [l.strip() for l in result.stdout.split('\n') if l.strip()]
+            total_cpu = 0.0
+            total_mem_kb = 0.0
 
-                    with open(full_path, "a", encoding='utf-8') as f:
-                        f.write(f"{now_str}, {cpu:.1f}%, {rss_mb:.1f}MB, {rss_kb}KB, 0\n")
-                    return True
+            for line in lines:
+                parts = line.split()
+                if len(parts) >= 2:
+                    try:
+                        total_cpu += float(parts[0])
+                        total_mem_kb += float(parts[1])
+                    except ValueError:
+                        pass
+
+            mem_mb = total_mem_kb / 1024.0
+
+            if not os.path.exists(log_dir):
+                os.makedirs(log_dir)
+            full_path = os.path.join(log_dir, f"{process_name}_resources.log")
+            now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+            with open(full_path, "a", encoding='utf-8') as f:
+                f.write(f"{now_str}, {total_cpu:.1f}%, {mem_mb:.1f}MB\n")
+
+            return True
+
+        except subprocess.TimeoutExpired:
+            logger.warning(f"ps command timed out for {process_name}")
+            return False
         except Exception as e:
-            logger.error(f"Failed to log process usage: {e}")
+            logger.error(f"Failed to log process usage for {process_name}: {e}")
         return False
 
     def _get_pid(self, name: str) -> int:
@@ -151,3 +167,92 @@ WantedBy=multi-user.target
                 logger.error(f"stderr: {e.stderr}")
         except Exception as e:
             logger.error(f"Shell script failed: {e}")
+
+    def generate_resource_summary(self, process_names: list, log_dir: str) -> bool:
+        """Generate unified summary report for all monitored processes."""
+        try:
+            if not os.path.exists(log_dir):
+                return False
+
+            summary_path = os.path.join(log_dir, "resource_summary.log")
+
+            # Read and parse all individual process logs
+            all_data = {}
+            for process_name in process_names:
+                log_path = os.path.join(log_dir, f"{process_name}_resources.log")
+                if not os.path.exists(log_path):
+                    continue
+
+                with open(log_path, 'r', encoding='utf-8') as f:
+                    lines = f.readlines()
+                    if not lines:
+                        continue
+
+                    cpu_values = []
+                    mem_values = []
+                    for line in lines:
+                        parts = line.strip().split(', ')
+                        if len(parts) >= 3:
+                            try:
+                                cpu_str = parts[1].replace('%', '')
+                                mem_str = parts[2].replace('MB', '')
+                                cpu_values.append(float(cpu_str))
+                                mem_values.append(float(mem_str))
+                            except ValueError:
+                                pass
+
+                    if cpu_values and mem_values:
+                        all_data[process_name] = {
+                            'samples': len(cpu_values),
+                            'cpu_avg': sum(cpu_values) / len(cpu_values),
+                            'cpu_max': max(cpu_values),
+                            'cpu_min': min(cpu_values),
+                            'mem_avg': sum(mem_values) / len(mem_values),
+                            'mem_max': max(mem_values),
+                            'mem_min': min(mem_values),
+                        }
+
+            if not all_data:
+                logger.warning("No resource data available for summary")
+                return False
+
+            # Write unified summary
+            with open(summary_path, 'w', encoding='utf-8') as f:
+                f.write("=" * 80 + "\n")
+                f.write("RESOURCE USAGE SUMMARY - ALL PROCESSES\n")
+                f.write("=" * 80 + "\n")
+                f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+
+                for process_name, stats in all_data.items():
+                    f.write(f"Process: {process_name}\n")
+                    f.write("-" * 80 + "\n")
+                    f.write(f"  Samples Collected: {stats['samples']}\n")
+                    f.write(f"  CPU Usage:\n")
+                    f.write(f"    Average: {stats['cpu_avg']:.1f}%\n")
+                    f.write(f"    Maximum: {stats['cpu_max']:.1f}%\n")
+                    f.write(f"    Minimum: {stats['cpu_min']:.1f}%\n")
+                    f.write(f"  Memory Usage:\n")
+                    f.write(f"    Average: {stats['mem_avg']:.1f} MB\n")
+                    f.write(f"    Maximum: {stats['mem_max']:.1f} MB\n")
+                    f.write(f"    Minimum: {stats['mem_min']:.1f} MB\n")
+                    f.write("\n")
+
+                # Overall statistics
+                total_samples = sum(s['samples'] for s in all_data.values())
+                total_cpu_avg = sum(s['cpu_avg'] for s in all_data.values())
+                total_mem_avg = sum(s['mem_avg'] for s in all_data.values())
+
+                f.write("=" * 80 + "\n")
+                f.write("OVERALL STATISTICS\n")
+                f.write("=" * 80 + "\n")
+                f.write(f"  Total Samples: {total_samples}\n")
+                f.write(f"  Combined Average CPU: {total_cpu_avg:.1f}%\n")
+                f.write(f"  Combined Average Memory: {total_mem_avg:.1f} MB\n")
+                f.write("=" * 80 + "\n")
+
+            logger.info(f"Resource summary generated: {summary_path}")
+            return True
+
+        except Exception as e:
+            logger.error(f"Failed to generate resource summary: {e}")
+            return False

@@ -179,13 +179,16 @@ class TestLinuxSystemInfo:
 
     @patch("platforms.linux.system.subprocess.run")
     def test_log_process_usage_success(self, mock_run):
-        """Test logging process CPU and memory usage."""
+        """Test logging process CPU and memory usage.
+
+        The implementation uses a single 'ps -C <name> -o %cpu,rss
+        --no-headers' call and sums all instances of the process.
+        """
         from platforms.linux.system import LinuxSystemInfo
 
-        # pgrep returns PID, ps returns usage
+        # ps -C returns one line per process instance (no headers)
         mock_run.side_effect = [
-            MagicMock(returncode=0, stdout="1234\n"),  # pgrep
-            MagicMock(returncode=0, stdout="%CPU RSS\n 12.5 102400\n"),  # ps
+            MagicMock(returncode=0, stdout="12.5 102400\n 7.5 51200\n"),
         ]
 
         mgr = LinuxSystemInfo()
@@ -194,7 +197,18 @@ class TestLinuxSystemInfo:
                 result = mgr.log_process_usage("stagent", "/tmp/log")
 
         assert result == True
-        assert mock_run.call_count == 2
+        assert mock_run.call_count == 1
+        mock_run.assert_called_once_with(
+            ["ps", "-C", "stagent", "-o", "%cpu,rss", "--no-headers"],
+            capture_output=True, text=True, timeout=5
+        )
+        # summed across both instances: cpu 20.0 %, mem (102400+51200)/1024 MB
+        handle = mock_open.return_value.__enter__.return_value
+        written = "".join(
+            str(c.args[0]) for c in handle.write.call_args_list if c.args
+        )
+        assert "20.0%" in written
+        assert "150.0MB" in written
 
     @patch("platforms.linux.system.os.geteuid", create=True)
     def test_enable_privilege_as_root(self, mock_geteuid):

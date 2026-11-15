@@ -75,7 +75,11 @@ class StressTest:
         elif sys.platform.startswith('linux'):
             self.service_name = "stagentd.service"
             self.drv_name = "stadrv"
-            self.service_process_name = "stagentd"
+            # NOTE: the process name is stAgentSvc, NOT the systemd unit name
+            # (stagentd) — the old value matched no process, so the resource
+            # monitor collected zero samples on Linux.
+            self.service_process_name = "stAgentSvc"
+            self.service_process_names = ["stAgentSvc", "stAgentApp", "stAgentUI"]
             self.watchdog_process_name = "stagentd-mon"
         else:  # Windows
             self.service_name = "stagentsvc"
@@ -119,6 +123,8 @@ class StressTest:
         self.current_custom_ports_added = False
         self.current_interop_proxy = False
         self.mtu_index = 0
+        self.test_start_time = None
+        self.test_end_time = None
 
     def _disable_all_webui_toggles(self):
         self.config.tls_dtls_toggle_enabled = False
@@ -182,46 +188,58 @@ class StressTest:
         )
 
         if onprem_enabled or any_webui_toggle:
-            try:
-                import getpass
-                print("\nWebUI feature enabled. Please enter tenant password below.")
-                password = getpass.getpass("Tenant Password: ")
-                import util_webui
+            # WebUI features need an interactive password prompt. Without a
+            # TTY (nohup/tmux-detached/service runs) getpass.getpass() blocks
+            # forever — this wedged a full stress03 run for 7 hours. Disable
+            # the toggles instead of hanging.
+            if not sys.stdin.isatty():
+                logger.warning(
+                    "WebUI features need an interactive terminal for the "
+                    "tenant password; no TTY detected — disabling WebUI "
+                    "toggles for this run."
+                )
+                self._disable_all_webui_toggles()
+            else:
+                try:
+                    import getpass
+                    print("\nWebUI feature enabled. Please enter tenant password below.")
+                    password = getpass.getpass("Tenant Password: ")
+                    import util_webui
 
-                if onprem_enabled:
-                    util_webui.perform_onprem_setup(
-                        self.config.config_data, tenant_host, password
-                    )
-
-                if any_webui_toggle:
-                    hostname = webui_login.get("tenant_hostname", "") or tenant_host
-                    username = webui_login.get("tenant_username", "")
-                    if hostname and username:
-                        self.webui_client = util_webui.WebUIClient(
-                            hostname, username, password
+                    if onprem_enabled:
+                        util_webui.perform_onprem_setup(
+                            self.config.config_data, tenant_host, password
                         )
-                        if not self.webui_client.login():
-                            logger.warning(
-                                "WebUI login failed. WebUI toggles disabled."
+
+                    if any_webui_toggle:
+                        hostname = webui_login.get("tenant_hostname", "") or tenant_host
+                        username = webui_login.get("tenant_username", "")
+                        if hostname and username:
+                            self.webui_client = util_webui.WebUIClient(
+                                hostname, username, password
+                            )
+                            if not self.webui_client.login():
+                                logger.warning(
+                                    "WebUI login failed. WebUI toggles disabled."
+                                )
+                                self._disable_all_webui_toggles()
+                            else:
+                                self.webui_client.load_config_names_from_local(
+                                    self.cfg_mgr.stagent_root
+                                )
+                        else:
+                            logger.error(
+                                "Missing tenant_hostname or tenant_username. "
+                                "WebUI toggles disabled."
                             )
                             self._disable_all_webui_toggles()
-                        else:
-                            self.webui_client.load_config_names_from_local(
-                                self.cfg_mgr.stagent_root
-                            )
-                    else:
-                        logger.error(
-                            "Missing tenant_hostname or tenant_username. "
-                            "WebUI toggles disabled."
-                        )
-                        self._disable_all_webui_toggles()
-            except ImportError:
-                logger.error(
-                    "Failed to load WebUI dependencies. "
-                    "Please ensure 'pylark-webapi-lib' is installed/configured."
-                )
-            except Exception as e:
-                logger.warning(f"Failed to read password or setup WebUI: {e}")
+                except ImportError:
+                    logger.error(
+                        "Failed to load WebUI dependencies. "
+                        "Please ensure 'pylark-webapi-lib' is installed/configured."
+                    )
+                except Exception as e:
+                    logger.warning(f"Failed to read password or setup WebUI: {e}")
         else:
             logger.info("WebUI features disabled.")
 
@@ -358,20 +376,106 @@ class StressTest:
             daemon=True
         )
         self.resource_monitor_thread.start()
-        logger.info(
-            f"Resource monitor started ({RESOURCE_MONITOR_INTERVAL}s interval)"
-        )
+        if sys.platform.startswith('linux'):
+            process_names = ", ".join(f"'{p}'" for p in self.service_process_names)
+            logger.info(
+                f"Resource monitor started for {process_names} "
+                f"({RESOURCE_MONITOR_INTERVAL}s interval)"
+            )
+        else:
+            logger.info(
+                f"Resource monitor started for '{self.service_process_name}' "
+                f"({RESOURCE_MONITOR_INTERVAL}s interval)"
+            )
 
     def _resource_monitor_loop(self):
+        """Background thread that periodically logs process resource usage."""
+        sample_count = 0
+        consecutive_failures = 0
+        max_consecutive_failures = 5
+
+        # Linux: monitor all client processes; other platforms: single process
+        if sys.platform.startswith('linux'):
+            process_names = self.service_process_names
+        else:
+            process_names = [self.service_process_name]
+
         while not self.stop_event.is_set():
             try:
-                self.system.log_process_usage(
-                    self.service_process_name, self.log_dir
-                )
+                success_count = 0
+                for process_name in process_names:
+                    if self.system.log_process_usage(process_name, self.log_dir):
+                        success_count += 1
+
+                if success_count > 0:
+                    sample_count += 1
+                    consecutive_failures = 0
+                else:
+                    consecutive_failures += 1
+                    if consecutive_failures == max_consecutive_failures:
+                        if sys.platform.startswith('linux'):
+                            processes = ", ".join(f"'{p}'" for p in process_names)
+                        else:
+                            processes = f"'{process_names[0]}'"
+                        logger.warning(
+                            f"Resource monitoring failed "
+                            f"{max_consecutive_failures} consecutive times. "
+                            f"Processes {processes} may not be running."
+                        )
             except Exception as e:
                 logger.warning(f"Resource monitor error: {e}")
+                consecutive_failures += 1
+
             if self.stop_event.wait(RESOURCE_MONITOR_INTERVAL):
                 break
+
+        if sample_count > 0:
+            logger.info(f"Resource monitor collected {sample_count} samples")
+        else:
+            if sys.platform.startswith('linux'):
+                processes = ", ".join(f"'{p}'" for p in process_names)
+            else:
+                processes = f"'{process_names[0]}'"
+            logger.warning(
+                f"Resource monitor collected 0 samples. "
+                f"Processes {processes} were not found during monitoring."
+            )
+
+    def _generate_final_reports(self, count: int, run_status: str = "COMPLETED") -> None:
+        """Generate the unified resource summary and per-process performance
+        reports at the end of a run (completed, skipped or interrupted)."""
+        if not hasattr(self.diag, 'generate_performance_report'):
+            return
+        if not self.test_start_time:
+            return
+        from datetime import datetime
+        self.test_end_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        if sys.platform.startswith('linux'):
+            logger.info("Generating unified resource summary...")
+            if hasattr(self.system, 'generate_resource_summary'):
+                self.system.generate_resource_summary(
+                    self.service_process_names, self.log_dir
+                )
+            for process_name in self.service_process_names:
+                self.diag.generate_performance_report(
+                    log_dir=self.log_dir,
+                    process_name=process_name,
+                    start_time=self.test_start_time,
+                    end_time=self.test_end_time,
+                    total_iterations=self.config.loop_times,
+                    completed_iterations=count,
+                    run_status=run_status
+                )
+        else:
+            self.diag.generate_performance_report(
+                log_dir=self.log_dir,
+                process_name=self.service_process_name,
+                start_time=self.test_start_time,
+                end_time=self.test_end_time,
+                total_iterations=self.config.loop_times,
+                completed_iterations=count,
+                run_status=run_status
+            )
 
     def exec_failclose_check(self):
         if not self.cfg_mgr.failclose_active:
@@ -784,6 +888,10 @@ class StressTest:
             )
             self.input.stop_input_monitor()
             logger.info(f"--------- Finished {count} iterations. ---------")
+            self._generate_final_reports(
+                count,
+                "COMPLETED" if count >= self.config.loop_times else "INTERRUPTED"
+            )
             return
 
         for count in range(start_iter, self.config.loop_times + 1):
@@ -947,8 +1055,15 @@ class StressTest:
                     break
 
         logger.info(f"--------- Finished {count} iterations. ---------")
+        self._generate_final_reports(
+            count,
+            "COMPLETED" if count >= self.config.loop_times else "INTERRUPTED"
+        )
 
     def run(self):
+        from datetime import datetime
+        self.test_start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
         if self.config.decouple_client:
             self._run_decoupled()
             return
@@ -969,6 +1084,10 @@ class StressTest:
                        f"Skipping run loop.")
             self.input.stop_input_monitor()
             logger.info(f"--------- Finished {count} iterations. ---------")
+            self._generate_final_reports(
+                count,
+                "COMPLETED" if count >= self.config.loop_times else "INTERRUPTED"
+            )
             return
 
         for count in range(start_iter, self.config.loop_times + 1):
@@ -1282,6 +1401,10 @@ class StressTest:
                 break
 
         logger.info(f"--------- Finished {count} iterations. ---------")
+        self._generate_final_reports(
+            count,
+            "COMPLETED" if count >= self.config.loop_times else "INTERRUPTED"
+        )
 
 if __name__ == "__main__":
     pass

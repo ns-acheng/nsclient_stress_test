@@ -81,7 +81,7 @@
             "total_conn": 1000,
             "concurrent_conn": 100,
             "target_urls": [
-                "http://10.136.217.223/readme.md"
+                "http://192.168.15.17/"
             ]
         },
         "ftp": {

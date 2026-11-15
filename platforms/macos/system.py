@@ -127,3 +127,7 @@ class MacOSSystemInfo(ISystemInfo):
                 logger.error(f"stderr: {e.stderr}")
         except Exception as e:
             logger.error(f"Shell script failed: {e}")
+
+    def generate_resource_summary(self, process_names: list, log_dir: str) -> bool:
+        """Generate unified summary report - not needed for macOS (single process)."""
+        return False

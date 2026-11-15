@@ -25,3 +25,8 @@ class ISystemInfo(ABC):
     @abstractmethod
     def run_shell_script(self, script_path: str, args: list = None) -> None:
         pass
+
+    @abstractmethod
+    def generate_resource_summary(self, process_names: list, log_dir: str) -> bool:
+        """Generate unified summary report for all monitored processes."""
+        pass

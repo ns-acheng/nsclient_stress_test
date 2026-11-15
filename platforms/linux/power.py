@@ -30,7 +30,11 @@ class LinuxPowerManager(IPowerManager):
         logger.info("Triggering system reboot...")
         try:
             import subprocess
-            subprocess.run(["sudo", "reboot"], check=False)
+            subprocess.run(
+                ["sudo", "reboot"],
+                check=False,
+                stdin=subprocess.DEVNULL
+            )
         except Exception as e:
             logger.error(f"Failed to trigger reboot: {e}")
 

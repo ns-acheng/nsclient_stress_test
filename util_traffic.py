@@ -371,7 +371,12 @@ def run_high_concurrency_test(
         )
         cmd = [
             ab_path, "-t", str(int(duration)),
-            "-n", "2000000000",
+            # NOTE: do not use a huge -n here. ab preallocates per-request
+            # stats arrays proportional to -n; -n 2000000000 made ab try to
+            # allocate ~64 GB and fail ("Could not allocate memory") on every
+            # iteration. 1,000,000 requests (~32 MB) is far more than a
+            # 20 s window can consume, so the -t duration remains the limit.
+            "-n", "1000000",
             "-c", str(concurrency), "-k", target_url
         ]
 
